@@ -333,6 +333,19 @@ Slice 5:
 - do not silently change business rules
 - ask for confirmation only if a rule is genuinely missing from docs
 
+## Git Workflow
+- one commit per approved block
+- use Conventional Commits only
+- do not create commits continuously
+- create a commit only after a block is finished, reviewed, and tests are passing
+- show a short summary of what changed before committing
+- show the proposed commit message before committing
+- do not commit partial work
+- do not commit broken code
+- do not commit TODOs for core business rules
+- do not commit out-of-scope changes
+- do not mix unrelated changes in the same commit
+
 ## What NOT to do
 - Do not implement anything outside the current slice
 - Do not add features not listed in scope
