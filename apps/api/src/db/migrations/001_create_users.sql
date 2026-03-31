@@ -1,0 +1,13 @@
+CREATE TABLE users (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  username VARCHAR(100) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  display_name VARCHAR(150) NOT NULL,
+  role VARCHAR(20) NOT NULL CHECK (role IN ('ADMIN', 'OPERATOR')),
+  is_active BOOLEAN NOT NULL DEFAULT true,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE UNIQUE INDEX users_username_unique
+  ON users (UPPER(BTRIM(username)));
